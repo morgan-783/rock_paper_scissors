@@ -10,10 +10,9 @@ let computerScore = 0;
 const computerPlay = function () {
   return options[Math.floor(Math.random() * options.length)];
 };
-computerPlay();
-
+/*
 const playRound = function () {
-  let playerSelection = prompt('Choose your weapon');
+ let playerSelection = prompt('Choose your weapon');
   const computerSelection = computerPlay();
 
   //Use an if/else statement
@@ -44,3 +43,10 @@ const game = function () {
   }
 };
 game();
+*/
+
+/*To add 
+-Try again modal
+-Buttons
+-Counter
+*/
