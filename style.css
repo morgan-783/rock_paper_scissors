@@ -12,8 +12,73 @@ underneath is rules to game (two sentences)
 
 blue backdrop
 white words
-
 */
+
+@import url('https://fonts.googleapis.com/css2?family=Turret+Road:wght@300&display=swap');
+
+* {
+  font-family: 'Turret Road', sans-serif;
+  margin: 0;
+  padding: 0;
+}
 body {
-  background-color: #004170;
+  height: 100vh;
+  margin: 0;
+}
+header {
+  background-color: pink;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 15vh;
+}
+/* Scoreboard*/
+
+.scoreboard {
+  margin: 20px auto;
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 250px;
+  padding: 25px;
+  font-size: 2.5rem;
+  text-align: center;
+  position: relative;
+}
+.badge {
+  font-size: 20px;
+  background-color: pink;
+  padding: 5px;
+}
+#user-label {
+  position: absolute;
+  top: 35px;
+  right: -30px;
+}
+
+#comp-label {
+  position: absolute;
+  top: 35px;
+  left: -30px;
+}
+
+p {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.choices {
+  display: flex;
+  justify-content: space-evenly;
+}
+.select {
+  width: 100px;
+}
+.options {
+  border: 5px solid black;
+  margin: 1rem;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
 }
