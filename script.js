@@ -1,20 +1,31 @@
 'use strict';
+//DOM Elements
+const rockDiv = document.querySelector('#rock');
+const paperDiv = document.querySelector('#paper');
+const scissorsDiv = document.querySelector('#scissors');
+
+const userScore = document.getElementById('userScore');
+const cpuScore = document.getElementById('compScore');
 
 //Starting Conditions
-const options = ['rock', 'paper', 'scissors'];
 
+const ROCK = 'rock';
+const PAPER = 'paper';
+const SCISSORS = 'scissors';
+const options = [ROCK, PAPER, SCISSORS];
 let playerScore = 0;
 let computerScore = 0;
 
-//Function that randomly returns R/P/S
+//Will update Result Message
+const displayMessage = function (message) {
+  document.querySelector('.results').textContent = message;
+};
+//Computer Choice
 const computerPlay = function () {
   return options[Math.floor(Math.random() * options.length)];
 };
-/*
-const playRound = function () {
- let playerSelection = prompt('Choose your weapon');
-  const computerSelection = computerPlay();
 
+const playRound = function (playerSelection, computerSelection) {
   //Use an if/else statement
   if (
     (playerSelection === 'rock' && computerSelection === 'scissors') ||
@@ -22,31 +33,44 @@ const playRound = function () {
     (playerSelection === 'scissors' && computerSelection === 'paper')
   ) {
     playerScore++;
-    return `You won 💯! ${playerSelection} beats ${computerSelection}`;
+    userScore.innerHTML = playerScore;
+    displayMessage(`You won 💯! ${playerSelection} beats ${computerSelection}`);
   } else if (playerSelection === computerSelection) {
-    return `It's a tie!`;
+    displayMessage(`It's a tie!`);
   } else {
     computerScore++;
-    return `You lose 😞! ${computerSelection} beats ${playerSelection}`;
+    cpuScore.innerHTML = computerScore;
+    displayMessage(
+      `You lose 😞! ${computerSelection} beats ${playerSelection}`
+    );
   }
 };
 
 //Plays Multiple Rounds
 const game = function () {
-  for (let i = 0; i < 5; i++) {
-    playRound(i);
-  }
-  if (playerScore > computerScore) {
-    alert`Congratulations! You beat the machine. `;
-  } else {
-    alert`Sorry. The machine has won. `;
+  if (playerScore >= 5 || computerScore >= 5) {
+    alert`You figured this out`;
   }
 };
 game();
-*/
 
-/*To add 
--Try again modal
--Buttons
--Counter
-*/
+//Event Listeners
+rockDiv.addEventListener('click', function () {
+  let playerSelection = 'rock';
+  let computerSelection = computerPlay();
+  playRound(playerSelection, computerSelection);
+});
+
+paperDiv.addEventListener('click', function () {
+  let playerSelection = 'paper';
+  let computerSelection = computerPlay();
+  playRound(playerSelection, computerSelection);
+});
+
+scissorsDiv.addEventListener('click', function () {
+  let playerSelection = 'scissors';
+  let computerSelection = computerPlay();
+  playRound(playerSelection, computerSelection);
+});
+
+const endGame = function () {};

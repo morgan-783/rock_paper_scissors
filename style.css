@@ -60,7 +60,7 @@ h1 {
   top: 35px;
   left: -30px;
 }
-
+/* GAme Buttons */
 p {
   text-align: center;
   margin-bottom: 2rem;
@@ -76,6 +76,8 @@ p {
   border: 5px solid black;
   margin: 1rem;
 }
+/*Footer*/
+
 footer {
   position: absolute;
   bottom: 0;
