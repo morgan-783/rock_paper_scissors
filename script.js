@@ -7,6 +7,8 @@ const scissorsDiv = document.querySelector('#scissors');
 const userScore = document.getElementById('userScore');
 const cpuScore = document.getElementById('compScore');
 
+const restartBtn = document.getElementById('restartBtn');
+
 //Starting Conditions
 
 const ROCK = 'rock';
@@ -25,7 +27,19 @@ const computerPlay = function () {
   return options[Math.floor(Math.random() * options.length)];
 };
 
+const gameOver = function () {
+  if (playerScore === 5) {
+    displayMessage('Congratulations! You have beat the Machine!');
+    return true;
+  } else if (computerScore === 5) {
+    displayMessage('The Machine has won.');
+    return true;
+  }
+  return false;
+};
+
 const playRound = function (playerSelection, computerSelection) {
+  if (gameOver()) return;
   //Use an if/else statement
   if (
     (playerSelection === 'rock' && computerSelection === 'scissors') ||
@@ -46,13 +60,14 @@ const playRound = function (playerSelection, computerSelection) {
   }
 };
 
-//Plays Multiple Rounds
-const game = function () {
-  if (playerScore >= 5 || computerScore >= 5) {
-    alert`You figured this out`;
-  }
+//Restarts Game
+const restartGame = function () {
+  playerScore = 0;
+  computerScore = 0;
+  displayMessage("Let's Play");
+  userScore.innerHTML = 0;
+  cpuScore.innerHTML = 0;
 };
-game();
 
 //Event Listeners
 rockDiv.addEventListener('click', function () {
@@ -72,5 +87,4 @@ scissorsDiv.addEventListener('click', function () {
   let computerSelection = computerPlay();
   playRound(playerSelection, computerSelection);
 });
-
-const endGame = function () {};
+restartBtn.addEventListener('click', restartGame);
