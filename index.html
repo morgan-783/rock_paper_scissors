@@ -4,19 +4,27 @@
     <meta charset="UTF-8" />
     <title>Rock Paper Scissors Game</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
   <body>
     <header>
-      <h1>Rock Paper Scissors Shoot!</h1>
+      <h1>Rock Paper Scissors</h1>
+      <div class="restartgame">
+        <button class="btn btn-restart" id="restartBtn">Play Again</button>
+      </div>
     </header>
+
     <main>
+      <p id="rules">First to 5 wins!</p>
       <div class="scoreboard">
         <div id="user-label" class="badge">USER</div>
         <div id="comp-label" class="badge">COMP</div>
         <span id="userScore">0</span>:<span id="compScore">0</span>
       </div>
       <div id="game">
-        <p id="rules">Best out of 5 wins!</p>
         <p class="results">Let's Play!</p>
         <div class="choices">
           <div class="options">
@@ -47,20 +55,17 @@
       </div>
     </main>
 
-    <footer>
-      <hr />
-      <p>Copyright Morgan O.</p>
-      <a
-        target="_blank"
-        href="https://icons8.com/icon/zxChrLiJ6g99/hand-side-view"
-        >Hand Side View icon by Icons8</a
-      >
+    <footer class="footer">
+      <p>Copyright &copy morgan-783</p>
+      <a href="https://github.com/morgan-783" target="_blank">
+        <i class="fa-brands fa-github"></i>
+      </a>
     </footer>
-
-    <form>
-      <input type="reset" value="Try Again" />
-      <div class="hidden"></div>
-    </form>
   </body>
   <script src="script.js"></script>
 </html>
+
+<!----<a target="_blank" href="https://icons8.com/icon/zxChrLiJ6g99/hand-side-view"
+  >Hand Side View icon by Icons8</a
+>
+-->

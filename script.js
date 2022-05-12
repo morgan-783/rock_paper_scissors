@@ -32,7 +32,7 @@ const gameOver = function () {
     displayMessage('Congratulations! You have beat the Machine!');
     return true;
   } else if (computerScore === 5) {
-    displayMessage('The Machine has won.');
+    displayMessage('GAME OVER: The Machine has won.');
     return true;
   }
   return false;

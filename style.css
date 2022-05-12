@@ -1,41 +1,36 @@
-/* Design ideas
--When game is over, add try again modal in center with overlay over the back.
-
-
-Font awesome icons
-on bottom center(activates on click;
-
-score box top middle of page
-
-header with title
-underneath is rules to game (two sentences)
-
-blue backdrop
-white words
-*/
-
-@import url('https://fonts.googleapis.com/css2?family=Turret+Road:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
 
 * {
-  font-family: 'Turret Road', sans-serif;
+  font-family: 'Gloria Hallelujah', sans-serif;
   margin: 0;
   padding: 0;
+}
+html {
+  position: relative;
+  min-height: 100%;
 }
 body {
   height: 100vh;
   margin: 0;
 }
+/*Header */
+
 header {
-  background-color: pink;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
 }
-h1 {
-  text-align: center;
-  margin-bottom: 15vh;
+/* Restart Button */
+#restartBtn {
+  position: absolute;
+  top: 32px;
+  left: 32px;
 }
+
 /* Scoreboard*/
 
 .scoreboard {
-  margin: 20px auto;
+  margin: 60px auto;
   border: 2px solid black;
   border-radius: 5px;
   width: 250px;
@@ -46,7 +41,7 @@ h1 {
 }
 .badge {
   font-size: 20px;
-  background-color: pink;
+  background-color: red;
   padding: 5px;
 }
 #user-label {
@@ -60,20 +55,24 @@ h1 {
   top: 35px;
   left: -30px;
 }
-/* GAme Buttons */
+
+/* Game Buttons */
 p {
   text-align: center;
-  margin-bottom: 2rem;
+  font-size: 25px;
 }
 .choices {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
 }
 .select {
   width: 100px;
+  cursor: pointer;
+  border-radius: 15px;
 }
 .options {
-  border: 5px solid black;
   margin: 1rem;
 }
 /*Footer*/
@@ -81,6 +80,19 @@ p {
 footer {
   position: absolute;
   bottom: 0;
+  left: 0;
+  height: 2em;
   width: 100%;
-  text-align: center;
+  padding: 15px;
+  gap: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer > p {
+  font-size: 15px;
+}
+.fa-github {
+  font-size: 24px;
+  color: red;
 }
